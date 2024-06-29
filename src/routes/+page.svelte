@@ -74,56 +74,29 @@
   });
 </script>
 
-<!-- Top bar -->
-<div class="flex flex-row h-full">
-  <!-- Main map -->
-  <div bind:this={mapElement} class="w-full" />
-
-  <!-- Side bar -->
-  <aside class="flex-none md:w-96 w-80 p-2 pt-3 overflow-auto">
-    <div class="flex flex-col space-y-2 h-full">
-      {#if placesLibrary && map}
-        <SearchBar bind:location {placesLibrary} {map} initialValue={defaultPlace.name} />
-      {/if}
-
-      <div class="p-4 surface-variant outline-text rounded-lg space-y-3">
-        <p>
-          <a
-            class="primary-text"
-            href="https://developers.google.com/maps/documentation/solar/overview?hl=en"
-            target="_blank"
-          >
-            Two distinct endpoints of the <b>Solar API</b>
-            <md-icon class="text-sm">open_in_new</md-icon>
-          </a>
-          offer many benefits to solar marketplace websites, solar installers, and solar SaaS designers.
-        </p>
-
-        <p>
-          <b>Click on an area below</b>
-          to see what type of information the Solar API can provide.
-        </p>
+<!-- Main Layout -->
+<div class="flex h-full">
+  <!-- Main Content -->
+  <div class="flex flex-col flex-grow">
+    <!-- Header -->
+    <header class="flex-none w-full overflow-auto">
+      <div class="flex flex-col space-x-2">
+        {#if placesLibrary && map}
+          <SearchBar bind:location {placesLibrary} {map} initialValue={defaultPlace.name} />
+        {/if}
+        <div class="flex-grow" />
       </div>
+    </header>
 
-      {#if location}
-        <Sections {location} {map} {geometryLibrary} {googleMapsApiKey} />
-      {/if}
+    <!-- Main map -->
+    <div class="flex-grow" bind:this={mapElement} />
+  </div>
 
-      <div class="grow" />
-
-      <div class="flex flex-col items-center w-full">
-        <md-text-button
-          href="https://github.com/googlemaps-samples/js-solar-potential"
-          target="_blank"
-        >
-          View code on GitHub
-          <img slot="icon" src="github-mark.svg" alt="GitHub" width="16" height="16" />
-        </md-text-button>
-      </div>
-
-      <span class="pb-4 text-center outline-text label-small">
-        This is not an officially supported Google product.
-      </span>
-    </div>
-  </aside>
+  <!-- Sidebar -->
+  {#if location}
+  <div class="flex-none w-1/4 bg-gray-100 p-4 pt-14 overflow-auto">
+    <Sections {location} {map} {geometryLibrary} {googleMapsApiKey} />
+  </div>
+  {/if}
 </div>
+

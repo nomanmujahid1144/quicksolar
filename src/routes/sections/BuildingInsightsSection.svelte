@@ -204,7 +204,7 @@
   </Expandable>
 
   {#if expandedSection == title}
-    <div class="absolute top-0 left-0 w-72">
+    <div class="absolute top-15 left-0 w-72">
       <div class="flex flex-col space-y-2 m-2">
         <SummaryCard
           {icon}

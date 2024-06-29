@@ -290,7 +290,7 @@
   </Expandable>
 {/if}
 
-<div class="absolute top-0 left-0 w-72">
+<div class="absolute top-15 left-0 w-72">
   {#if expandedSection == title && layer}
     <div class="m-2">
       <SummaryCard {icon} {title} rows={[{ name: dataLayerOptions[layerId], value: '' }]}>

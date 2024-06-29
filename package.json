@@ -15,7 +15,8 @@
     "test:unit": "vitest run --coverage"
   },
   "dependencies": {
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "svelte-i18n": "^4.0.0"
   },
   "devDependencies": {
     "@fontsource/fira-mono": "^5.0.12",

@@ -22,6 +22,7 @@
   import BuildingInsightsSection from './BuildingInsightsSection.svelte';
   import DataLayersSection from './DataLayersSection.svelte';
   import SolarPotentialSection from './SolarPotentialSection.svelte';
+  import LanguageSection from './Language.svelte';
 
   export let location: google.maps.LatLng;
   export let map: google.maps.Map;
@@ -94,5 +95,10 @@
       solarPanelConfigs={buildingInsights.solarPotential.solarPanelConfigs}
       defaultPanelCapacityWatts={buildingInsights.solarPotential.panelCapacityWatts}
     />
+  {/if}
+
+  {#if buildingInsights}
+    <md-divider inset />
+    <LanguageSection />
   {/if}
 </div>
