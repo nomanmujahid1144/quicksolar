@@ -1,91 +1,36 @@
-# ☀️ Solar Potential demo
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-> _This is not an officially supported Google product._
+## Getting Started
 
-The [Solar API](https://developers.google.com/maps/documentation/solar/overview)
-offers many benefits to solar marketplace websites, solar installers, and solar SaaS designers.
+First, run the development server:
 
-This is a demo app that showcases and displays the information from the Solar API into a map.
-
-## Before you begin
-
-You need a Google Cloud project with a billing account and the Maps JavaScript API and Solar API enabled.
-
-To learn more, see [Set up in Cloud Console](https://developers.google.com/maps/documentation/javascript/cloud-setup).
-
-Additionally, you need a development environment with [Node.js](https://nodejs.org/en) installed.
-
-## Google Maps API key
-
-This app requires a Google Maps API key to work, follow the [Use API Keys](https://developers.google.com/maps/documentation/javascript/get-api-key) guide to create a new one.
-
-Once you have your API key, update the [`.env`](.env) file with your key.
-
-```sh
-VITE_GOOGLE_MAPS_API_KEY="My Google Maps API key"
-```
-
-## Running the app
-
-First, run `npm install` to install the required dependencies.
-
-### Developer mode
-
-To start the app in developer mode, this allows hot-reloads.
-This means that every time you change a file, the app reloads itself automatically.
-
-```sh
-# Run in developer mode.
+```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-### Production mode
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Starting in developer mode enables a lot of useful tools while developing, but for a production version we first need to build the app.
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-```sh
-# Build the app.
-npm run build
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-# Start the app.
-npm run start
-```
+## Learn More
 
-## Deploying to Cloud Run
+To learn more about Next.js, take a look at the following resources:
 
-One option to deploy your app is with [Cloud Run](https://cloud.google.com/run).
-It's easy to use and allows us to build and deploy scalable containerized apps written in any language on a fully managed platform.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-For some languages like Node.js, it infers the configuration and can [deploy from source directly](https://cloud.google.com/run/docs/deploying-source-code), without any additional configurations!
-This uploads your source, builds it with [Cloud Build](https://cloud.google.com/build), deploys it to Cloud Run, and starts the service with `npm run start`.
-All with a single command.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-```sh
-# Choose the Cloud location to deploy the app.
-export LOCATION="us-central1"
+## Deploy on Vercel
 
-# Build and deploy the app from source.
-gcloud run deploy "solar-potential" \
-  --source="." \
-  --region="$LOCATION" \
-  --allow-unauthenticated
-```
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## Checking your code
-
-You can use `npm run check` to do type checking and check for other common issues.
-You can also use `npm run check:watch` to continuously check your code when you save your changes.
-
-To check for styling and formatting issues, you can use `npm run lint`.
-To fix any lint issues, use `npm run format` to automatically format all the code base.
-
-## Tech stack
-
-- [Solar API](https://developers.google.com/maps/documentation/solar/overview): Get solar panel configurations, solar potential, and data layers.
-- [Google Maps](https://developers.google.com/maps/documentation/javascript/overview): Display a custom map with the Google Maps JavaScript API.
-- [Material Desgin 3](https://m3.material.io): Material Design 3 [web components](https://github.com/material-components/material-web#readme).
-- [SvelteKit](https://kit.svelte.dev): Compiler framework to develop declarative reactive web apps with [TypeScript](https://www.typescriptlang.org).
-- [Vite](https://vitejs.dev): Build tool with a fast development experience for modern web projects.
-- [Tailwind](https://tailwindcss.com): CSS framework for design and styling.
-- [ESLint](https://eslint.org): Statically analyze code to quickly find problems.
-- [Prettier](https://prettier.io): Opinionated code formatter.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
