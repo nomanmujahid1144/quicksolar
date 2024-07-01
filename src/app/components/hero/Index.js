@@ -19,7 +19,8 @@ export const Hero = () => {
         const { geometry } = place;
         const lat = geometry.location.lat();
         const lng = geometry.location.lng();
-        router.push(`/solar/?lat=${lat}&lng=${lng}`);
+        window.location.href = `/solar/?lat=${lat}&lng=${lng}`;
+        // router.push(`/solar/?lat=${lat}&lng=${lng}`);
   };
 
   if (!isLoaded) return <div>Loading...</div>;
